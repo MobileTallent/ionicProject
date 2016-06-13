@@ -1,0 +1,22 @@
+<ion-view title="Schedule">
+  <ion-content>
+    <div class="container">
+      <div class="sessionList list">
+
+        <!--<a class="item item-icon-right" href="#/session/{{group.Id}}" ng-repeat="group in groupData">-->
+          <!--<i class="icon ion-ios-arrow-right"></i>-->
+          <!--<h2>{{group.Start_time__c | date:'dd/MM/yyyy'}}</h2>-->
+          <!--<p>{{group.Start_time__c | date:'HH:mm'}}</p>-->
+        <!--</a>-->
+
+        <a class="item item-icon-right" ng-click="sessionAction(group)" ng-repeat="group in groupData | filter: filterFunction">
+          <i class="icon ion-ios-arrow-right"></i>
+          <h2>{{group.Start_time__c | date:'dd/MM/yyyy'}}</h2>
+          <p>{{group.Start_time__c | date:'HH:mm'}}</p>
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>

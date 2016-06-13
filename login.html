@@ -1,0 +1,36 @@
+<ion-view hide-nav-bar="true" hide-back-button="true" class="login-page" ng-controller="loginPage">
+  <div class="middlePage">
+    <div class="container">
+      <div class="fullscreen-bg text-center">
+        <div class="logo">
+          <img src="img/rock-logo.png" alt="">
+        </div>
+        <!-- /.logo -->
+
+        <form name="loginFrm" class="simple-form">
+          <div class="text-middle">
+            <div class="row">
+              <div class="col text-center">
+                <label class="item item-input transparentInput">
+                  <input type="email" placeholder="abc@example.com" ng-init="user.username =''"value=""  ng-model="user.username" required>
+                </label>
+                <label class="item item-input transparentInput">
+                  <input type="password" placeholder="Password" ng-init="user.password=''" value="" ng-model="user.password" required>
+                </label>
+              </div>
+            </div>
+            <div class="row text-center">
+             <div class="col">
+               <button ng-disabled="loginFrm.$invalid" ng-click="doLogin(user)" type="submit" class="button button-full btn-yellow">
+                 Login
+               </button>
+             </div>
+             <!-- /.col -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</ion-view>

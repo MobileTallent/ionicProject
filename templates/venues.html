@@ -1,0 +1,15 @@
+<ion-view title="Choir Name">
+  <ion-content>
+    <div class="container">
+      <div class="sessionList list">
+
+        <a class="item item-icon-left" href="#/venue/{{venue.Id}}" ng-repeat="venue in VenueData">
+          <i class="icon ion-location"></i>
+          {{venue.Name}}
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>

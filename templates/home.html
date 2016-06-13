@@ -1,0 +1,31 @@
+<ion-view hide-back-button="true" title="Home" cache-view="false">
+  <ion-content>
+    <div class="container">
+      <div class="sessions list">
+
+        <a class="item text-center list-bg-1" ng-click="clickMe()">
+          <img src="img/map.svg" class="rock-icon">
+          <h2>Choose Session</h2>
+          <p id="activeSession">{{ActivebrandName[0].Name}}</p>
+        </a>
+
+        <a class="item text-center list-bg-2" ng-click="scanBarcode()">
+          <img src="img/target.svg" class="rock-icon">
+          <h2>Scan Code</h2>
+        </a>
+
+        <a class="item text-center list-bg-3" href="#/send">
+          <img src="img/send.svg" class="rock-icon">
+          <h2>Send Data</h2>
+        </a>
+
+        <a class="item text-center list-bg-4" ng-click="logOut()">
+          <img src="img/logout.svg" class="rock-icon">
+          <h2>Logout</h2>
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>

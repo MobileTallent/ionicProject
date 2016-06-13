@@ -1,0 +1,15 @@
+<ion-view title="Sessions">
+  <ion-content>
+    <div class="container">
+      <div class="sessionList list">
+
+        <a class="item item-icon-left" href="#/group/{{group.Id}}" ng-repeat="group in groupData">
+          <i class="icon ion-ios-time-outline"></i>
+          {{group.Name}}
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>

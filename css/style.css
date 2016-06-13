@@ -1,0 +1,55 @@
+/* Empty. Add your own CSS if you like */
+body, .pane {
+    background: #0D1924;
+}
+.logo img { max-width : 280px;}
+.btn-yellow {
+
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #FCD62B;
+    color: #000;
+}
+img.rock-icon {
+    width: 100%;
+    max-width: 70px;
+}
+
+.sessions.list h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.sessions.list .item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.list-bg-1 {
+    background: #ffc900;
+}
+
+.list-bg-2 {
+    background: #ffffff;
+}
+.list-bg-2 {
+    background: #ffff;
+}
+.list-bg-3 {
+    background: #0072BB;
+}
+.list-bg-4 {
+    background: #0D1924;
+}
+.list-bg-4 h2, .list-bg-4 p {
+    color: #fff
+}
+
+.sessionList a:nth-child(even) {
+    background-color: #fff);
+}
+.sessionList a:nth-child(odd) {
+    background-color: #F7F7F7;
+}

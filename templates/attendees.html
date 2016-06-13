@@ -1,0 +1,16 @@
+
+<ion-view title="Sessions not uploaded" cache-view="false">  
+  <ion-content>
+    <div class="container">
+      <div class="sessionList list">
+
+        <a class="item item-icon-right" href="#/upload/{{item.sessionID}}" ng-repeat="item in SessionGroups | unique:'sessionID'">
+          <i class="icon ion-ios-arrow-right"></i>
+          <h2 ng-if="sessionSubgroups | filter: { sessionID: sessionId}"><strong>{{item.sessionName}} - {{item.sessionTime}}</strong></h2>
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>
