@@ -1,9 +1,9 @@
 <ion-view title="Choir Name">
   <ion-content>
-    <div class="container">
-      <div class="sessionList list">
+    <div class="container phase1">
+      <div class="sessionList  list">
 
-        <a class="item item-icon-left" href="#/venue/{{venue.Id}}" ng-repeat="venue in VenueData">
+        <a class="item item-icon-left" href="#/venue/{{venue.Id}}" ng-repeat="venue in VenueData | orderBy:'Name'">
           <i class="icon ion-location"></i>
           {{venue.Name}}
         </a>

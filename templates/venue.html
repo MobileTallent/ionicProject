@@ -1,9 +1,9 @@
 <ion-view title="Sessions">
   <ion-content>
-    <div class="container">
+    <div class="container phase1">
       <div class="sessionList list">
 
-        <a class="item item-icon-left" href="#/group/{{group.Id}}" ng-repeat="group in groupData">
+        <a class="item item-icon-left" href="#/group/{{group.Id}}" ng-repeat="group in vgroupData | orderBy:'Name'">
           <i class="icon ion-ios-time-outline"></i>
           {{group.Name}}
         </a>

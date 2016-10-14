@@ -1,10 +1,10 @@
 <ion-view title="Upload Attendees">
   <ion-content>
     <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
-      <ion-item  ng-repeat="item in sessionSubgroups | filter: { sessionID: sessionId}"
+      <ion-item  ng-repeat="item in sessionSubgroups | filter: { SelectedScheduleName:sessionId}  track by $index "
                 item="item"
                 class="item-remove-animate">
-                {{item.first_name}}
+               {{item.first_name}}
         <ion-delete-button class="ion-minus-circled"
                            ng-click="onItemDelete(item)">
         </ion-delete-button>

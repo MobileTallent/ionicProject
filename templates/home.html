@@ -1,31 +1,35 @@
-<ion-view hide-back-button="true" title="Home" cache-view="false">
-  <ion-content>
-    <div class="container">
+<ion-view title="Home"  hide-back-button="true" cache-view="false"  >  
+    <ion-content>
+	<div class="fluid-container">
       <div class="sessions list">
 
-        <a class="item text-center list-bg-1" ng-click="clickMe()">
-          <img src="img/map.svg" class="rock-icon">
-          <h2>Choose Session</h2>
-          <p id="activeSession">{{ActivebrandName[0].Name}}</p>
-        </a>
+       <a class="item text-center list-bg-1 s_l" ng-click="songlist1()">
+				<img class="img-responsive margin_auto "  src="image/song_library.png" alt="Song Library"></img>
+				<p class="fa_font fa_color_blue">SONG LIBRARY</p>
+		</a>
 
-        <a class="item text-center list-bg-2" ng-click="scanBarcode()">
-          <img src="img/target.svg" class="rock-icon">
-          <h2>Scan Code</h2>
-        </a>
+        <a ng-click="BillingHistory1()" class="item text-center list-bg-2 b_h">
+				<img class="img-responsive margin_auto "  src="image/payment_logo.png" alt="Payment"></img>
+				<p class="fa_font fa_color_blue">BILLING HISTORY</p>
+				</a>
 
-        <a class="item text-center list-bg-3" href="#/send">
-          <img src="img/send.svg" class="rock-icon">
-          <h2>Send Data</h2>
-        </a>
+       <a ng-click="PersonalInfo()" class="item text-center list-bg-4 p_i">
+				<img class="img-responsive  margin_auto"   src="image/personal_info.png" alt="Personal Info"></img>
+				<p class="fa_font fa_color_blue">PERSONAL INFO</p>
+				</a>
 
-        <a class="item text-center list-bg-4" ng-click="logOut()">
-          <img src="img/logout.svg" class="rock-icon">
-          <h2>Logout</h2>
-        </a>
+        <a ng-click="SessionCalender1()" class="item text-center list-bg-3 s_c" >
+				<img class="img-responsive margin_auto"  src="image/calender1.png" alt="Calender"></img>
+				<p class="fa_font fa_color_white" >SESSION CALENDAR</p>
+				</a>
+		
+		<a ng-click="logOut()" class="item text-center list-bg-4 log_out">
+				<img class="img-responsive margin_auto"  src="image/logout_menu.png" alt="Logout"></img>
+				<p class="fa_font fa_color_white" >LOGOUT</p>
+				</a>
 
       </div>
-    </div>
-    <!-- /.container -->
-  </ion-content>
+</div>
+    </ion-content>
+
 </ion-view>

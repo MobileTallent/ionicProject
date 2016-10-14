@@ -1,17 +1,72 @@
 /* Empty. Add your own CSS if you like */
+/* .phase1 .pane {
+    background: #0D1924;
+}
+.phase1 .logo img { max-width : 280px;}
+
+.phase1 img.rock-icon {
+    width: 100%;
+    max-width: 70px;
+}
+
+.phase1 .sessions.list h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.phase1 .sessions.list .item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.phase1 .list-bg-1 {
+    background: #ffcd00;
+}
+
+.phase1 .list-bg-2 {
+    background: #ffffff;
+}
+.phase1 .list-bg-2 {
+    background: #ffff;
+}
+.phase1 .list-bg-3 {
+    background: #004b87 ; 
+}
+.phase1 .list-bg-4 {
+    background: #0D1924;
+}
+.phase1 .list-bg-4 h2, .phase1 .list-bg-4 p {
+    color: #fff
+}
+
+.phase1 .sessionList a:nth-child(even) {
+    background-color: #fbe215;
+    border-color: #000;
+    
+}
+.phase1 .sessionList a:nth-child(odd) {
+    background-color: #fbe215;
+    border-color: #000;
+    
+} */
+
+/* Phase 2 */
+
+/* Empty. Add your own CSS if you like */
 body, .pane {
     background: #0D1924;
 }
 .logo img { max-width : 280px;}
 .btn-yellow {
 
-    border-radius: 10px;
-    max-width: 400px;
+    border-radius: 5px;
+    max-width: 100px;
+    padding: 5px 15px ;   
     margin: 0 auto;
     font-weight: bold;
     text-transform: uppercase;
-    background: #FCD62B;
-    color: #000;
+    background: transparent;
+    color: #fff !important;
+    border: 1px solid #fff;
 }
 img.rock-icon {
     width: 100%;
@@ -24,11 +79,11 @@ img.rock-icon {
     font-weight: bold;
 }
 .sessions.list .item {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .list-bg-1 {
-    background: #ffc900;
+    background: rgb(254, 224, 20);
 }
 
 .list-bg-2 {
@@ -38,10 +93,26 @@ img.rock-icon {
     background: #ffff;
 }
 .list-bg-3 {
-    background: #0072BB;
+    background: #0a4c88;
 }
 .list-bg-4 {
     background: #0D1924;
+}
+
+.list-bg-5 {
+    background: #fbe215;
+}
+.list-bg-5 h2, .list-bg-5 p {
+    color: black;
+}
+.list-bg-3 h2, .list-bg-3 p {
+    color: #ffffff;
+}
+.list-bg-6 {
+        background-color: #0a4c88;
+}
+.list-bg-6 h2, .list-bg-6 p {
+    color: #ffffff;
 }
 .list-bg-4 h2, .list-bg-4 p {
     color: #fff
@@ -53,3 +124,31 @@ img.rock-icon {
 .sessionList a:nth-child(odd) {
     background-color: #F7F7F7;
 }
+	.items  {
+    background: rgb(15, 36, 50);
+    color: #AAAAAA;
+    padding: 8px 15px;
+    width: 100%;
+    border-style: none;
+	margin-bottom: 15px;
+}
+
+
+.container_top {
+     margin-top: 35px;
+}
+.container_topP {
+     margin-top: 45px;
+}
+
+
+/* .sessionList a:nth-child(even) {
+    background-color: #fbe215;
+    border-color: #000;
+    
+}
+.sessionList a:nth-child(odd) {
+    background-color: #fbe215;
+    border-color: #000;
+    
+} */

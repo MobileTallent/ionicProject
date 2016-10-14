@@ -5644,7 +5644,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
+ /* border-color: #ddd; */
   background-color: #fff;
   color: #444;
   position: relative;
@@ -5900,14 +5900,13 @@ ion-tabs.tabs-color-active-dark .tab-item {
       border-color: #000;
       background-color: #262626; }
 
-.item,
+
 .item h1,
 .item h2,
 .item h3,
 .item h4,
 .item h5,
 .item h6,
-.item p,
 .item-content,
 .item-content h1,
 .item-content h2,
@@ -5926,6 +5925,7 @@ a.item {
   a.item:hover, a.item:focus {
     text-decoration: none; }
 
+	
 /**
  * Complex Items
  * --------------------------------------------------
@@ -9647,7 +9647,8 @@ a.button {
   z-index: 10; }
   [nav-bar-transition="ios"] [nav-bar="active"] .bar,
   [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
-    background: transparent; }
+   background: rgb(8, 25, 38);
+ }
 
 [nav-bar-transition="ios"] [nav-bar="cached"] {
   display: block; }
@@ -9727,3 +9728,12 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+  
+  
+  @media screen and (max-height: 600px) {
+    .padding_5 {
+    padding: 0px 5px 0px 5px !important;
+}
+
+}

@@ -15,6 +15,71 @@ app.config( function ( $stateProvider, $urlRouterProvider, $httpProvider, $ionic
 			templateUrl: 'templates/home.html',
 			controller: 'appCtrl'
 		} )
+		.state( 'songlist1', {
+			url: '/songlist1',
+			templateUrl: 'templates/songlist1.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'BillingHistory1', {
+			url: '/BillingHistory1',
+			templateUrl: 'templates/BillingHistory1.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'BillingHistory', {
+			url: '/BillingHistory',
+			templateUrl: 'templates/BillingHistory.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'PersonalInfo', {
+			url: '/PersonalInfo',
+			templateUrl: 'templates/personal_info_menu.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'SessionCalender1', {
+			url: '/SessionCalender1',
+			templateUrl: 'templates/SessionCalender1.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'SessionCalender', {
+			url: '/SessionCalender',
+			templateUrl: 'templates/SessionCalender.html',
+			controller: 'appCtrl'
+		} )
+		
+	 	.state( 'SongList', {
+			url: '/SongList',
+			templateUrl: 'templates/SongList.html',
+			controller: 'appCtrl'
+		} )
+		/* .state( 'BillingHistory', {
+			url: '/BillingHistory',
+			templateUrl: 'templates/BillingHistory.html',
+			controller: 'appCtrl'
+		} ) */
+		
+		.state( 'MedicalInfo', {
+			url: '/MedicalInfo',
+			templateUrl: 'templates/MedicalInfo.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'EmergencyContact', {
+			url: '/EmergencyContact',
+			templateUrl: 'templates/EmergencyContact.html',
+			controller: 'appCtrl'
+		} )
+		.state( 'PersonalInfoPage', {
+			url: '/PersonalInfoPage',
+			templateUrl: 'templates/PersonalInfo.html',
+			controller: 'appCtrl'
+		} )
+		
+		
+		
+		.state( 'home1', {
+			url: '/home1',
+			templateUrl: 'templates/home1.html',
+			controller: 'appCtrl'
+		} )
 		.state( 'venues', {
 			url: '/venues',
 			templateUrl: 'templates/venues.html',

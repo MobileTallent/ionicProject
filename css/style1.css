@@ -1,0 +1,1068 @@
+
+
+.container_decoration{
+	background-color: rgb(8, 25, 37); 
+	min-height: 700px;
+}
+
+/** Background Color**/
+
+.background_blue{
+	background: rgb(15, 76, 135);
+}
+.background_navi_blue{
+	background: rgb(8, 25, 38);
+}
+.background_yellow{
+	background: rgb(254, 224, 20);
+}
+.background_gray{
+	background: rgb(69, 80, 89);
+}
+.background_green{
+	background: rgb(32, 108, 54);
+}
+.background_light_blue{
+	background-color:#276d95;
+}
+
+
+
+/**  Color**/
+.color_white{
+	color: #fff !important;
+}
+.color_yellow{
+	color: rgb(254, 224, 20);
+}
+.color_black{
+	color: #000;
+}
+.color_light_blue{
+	color: #276d95;
+}
+
+/**  Font size **/
+.font_size_26{
+	font-size: 26px;
+}
+.font_size_18{
+	font-size: 18px;
+}
+.font_size_12{
+	font-size: 12px !important;
+}
+
+/**  Margin **/
+.margin_tb_20{
+	margin: 20px 0px;
+}
+.margin_tb_50{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.margin_tb_40{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.margin_tb_20{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.margin_top_60{
+	margin-top: 60px;
+}
+.margin_top_30{
+	margin-top: 30px !important;
+}
+.margin_top_20{
+	margin-top: 20px;
+}
+.margin_top_10{
+	margin-top: 10px;
+}
+.margin_top_11{
+	margin-top: 11px;
+}
+.margin_auto{
+	margin: 0 auto;
+}
+.margin_left_10{
+	margin-left: 10px;
+}
+.top_5{
+	margin-top: -1px;
+}
+.margin_right_10{
+	margin-right: 10px;
+}
+.margin_minus_6{
+	margin: -6px 0px;
+}
+
+
+/**  Padding **/
+.padding_20{
+	padding: 20px 0px;
+}
+.padding_20_20{
+		padding: 20px 20px;
+}
+.padding_5_10{
+	padding: 5px 10px;
+}
+.padding_5_22{
+	padding: 5px 22px;
+}
+.padding_10_30{
+	padding: 10px 30px;
+}
+.padding_0_10{
+	padding: 0px 10px;
+}
+.padding_30{
+	padding: 30px 0px; 
+}
+.padding_15_pr{
+	padding: 15% 0%;  
+}
+.padding_10_pr{
+	padding: 10% 0%; 
+}
+.padding_5{
+	padding: 5px;
+}
+.padding_top_30{
+	padding-top: 30px;
+}
+.padding_10px{
+	padding: 10px;
+}
+.padding_tb_10{
+	padding: 10px auto;
+}
+/**  Width **/
+.max_width_482{
+	max-width: 482px;
+}
+.width_100_pr{
+	width: 100%;
+}
+.width_60_pr{
+	width: 60%;
+}
+.width_50_pr{
+	width: 50%;
+}
+.width_40_pr{
+	width: 40%;
+}
+.width_38pr{
+	width: 38%;
+}
+.width_60{
+	width: 60px;
+}
+.width_80pr{
+	width: 80% !important ;
+	/* 90% */
+}
+
+.border_radius_15{
+	border-radius:15px !important;
+}
+.border_radius_5{
+	border-radius:5px !important;
+}
+.navbar-nav>li>a{
+	line-height: 30px;
+}
+.navbar-header{
+	padding: 10px 0px 0px 0px !important;
+}
+.navbar-toggle{
+	margin-top: 0px;
+}
+.border_none{
+	border: none;
+}
+.shadow_bottom{
+	box-shadow:0px -10px 10px -3px #000;
+
+}
+.box_shadow_1{
+	box-shadow: 0px 0px 10px 3px #000;
+}
+.song_wrapper{
+	
+
+}
+.row{
+	margin: 0px -8px !important;
+
+}
+
+.table-responsive{
+	border-style: none;
+}
+.table > thead > tr > th{
+	border: 0px !important
+}
+.table > tbody > tr > td{
+	border-top: 0px !important;
+	border-bottom: 1px solid rgb(11, 69, 114);
+}
+.col-xs-2{
+	margin-left: 0px;
+}
+.dropdown-menu {
+  	margin-top: 100%;
+    margin-left: -50px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0px; 
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.hidden_div{
+	display: none;
+	margin-top: -1px;
+}
+.lable_arrange{
+	background-color: rgb(255, 255, 255);
+}
+
+.textbox_details{
+	background: rgb(15, 36, 50);
+	color: #fff;
+	padding:10px 15px;
+	width: 100%;
+	border-style: none;
+}
+
+.txtbox_yellow_arrange{
+	background: rgb(251, 226, 21);
+	padding: 5px;
+	margin-left: -5px;
+	width: 70%;
+}
+.list-group{
+	list-style: none; 
+	
+}
+.list-group-item {
+  	margin-left: -30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 10px;
+    
+    border: 0px !important;
+
+}	
+.song_container{
+	width: 100%;
+	float: left;	
+}
+.side_bar{
+	position: static
+	display: block;
+	z-index: 999;
+	float: left;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-left:-20px;
+}
+
+.container-fluid{
+	margin-right: -20px;
+}
+::-webkit-input-placeholder {
+  color: rgb(37, 105, 143);
+  
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: rgb(37, 105, 143);
+  opacity:1;
+  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: rgb(37, 105, 143);
+  opacity:1;
+ 
+}
+
+:-ms-input-placeholder {  
+   color: rgb(37, 105, 143);
+  
+}
+
+.f-nav{  /* To fix main menu container */
+	z-index: 9999;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	display: initial;
+
+}
+#header, #side_bar{
+	/* display: none; */
+}
+.item-input {
+  padding: 0px 0px 0px 16px !important;
+}
+.p_i1, .m_i1, .e_c1{
+	margin-top: 30px ;
+	margin-bottom: 30px ;
+}
+
+
+/* Responsive */
+ 
+@media screen and (max-width: 320px){
+	
+	.respo_top{
+		margin-top: 10px;
+	}
+	/* .song_name{
+		font-size: 17px;
+	
+	} */
+	
+}
+
+@media screen and (min-width: 320px) and (max-width: 360px){
+	.respo_top{
+		margin-top: 10px;
+	}
+	.phase1{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	/* .song_name{
+		font-size: 18px;
+	
+	}
+	.hidden_div{
+		padding: 9% 3%;
+	} */
+	
+	
+   		/* .song_name{
+			font-size: 15px;
+		} */
+		/* .song_library, .payments, .personal_info, .session_calender, .logout{
+		   	height: 128px !important;
+			padding-top: 10px;
+		}
+		.song_library_img , .payments_img, .personal_info_img, .session_calender_img, .logout_img{
+			height: 75px !important;
+		}
+		
+
+		.emergency_conctact, .medical_info, .personal_information{
+			height: 213px !important;
+		   	padding: 30px ;
+		}	
+		.emergency_conctact img, .medical_info img, .personal_information img{
+			height: 100px !important;
+		   	
+		}
+
+		.billing_menu, .payment_menu{
+			height: 320px !important;
+		}
+		.payment_page6{
+			height: auto;
+			width: auto;
+		}
+		.padding_top {
+		    padding: 80px 0px !important;
+		}
+		.payment_page6 img{
+			height: 100px !important;
+		}	 */	
+	
+}
+@media screen  and (min-width: 361px) and (max-width: 460px){
+	.respo_top{
+		margin-top: 10px;
+	}
+	.phase1{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	/* .song_name{
+		font-size: 20px;
+	
+	} */
+	/* .hidden_div{
+		padding: 9% 5%;
+	} */
+		.container_decoration{
+   			min-height: auto;
+   		}
+   		/* .song_name{
+			font-size: 15px;
+		} */
+	/* 	.song_library, .payments, .personal_info, .session_calender, .logout{
+		   	height: 120px !important;
+			padding-top: 10px;
+		}
+		.song_library_img , .payments_img, .personal_info_img, .session_calender_img, .logout_img{
+			height: 75px !important;
+		}
+
+		.emergency_conctact, .medical_info, .personal_information{
+			height: 213px !important;
+		   	padding: 30px ;
+		}	
+		.emergency_conctact img, .medical_info img, .personal_information img{
+			height: 100px !important;
+		   	
+		}
+
+		.billing_menu, .payment_menu{
+			height: 320px !important; 
+		}
+		.payment_page6{
+			height: auto;
+			width: auto;
+		}
+		.padding_top {
+		    padding: 80px 0px !important;
+		}
+		.payment_page6 img{
+			height: 100px !important;
+		} */
+}
+@media screen  and (min-width: 461px) and (max-width: 560px){
+	.respo_top{
+		margin-top: 10px;
+	}
+	.phase1{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	/* .song_name{
+		font-size: 22px;
+	
+	} */
+	/* .hidden_div{
+		padding: 7% 7%;
+	} */
+	/* .container_decoration{
+   			min-height: auto;
+   		}
+   		.fa_font{
+   			font-size: 17px;
+   		}
+		.song_library, .payments, .personal_info, .session_calender, .logout{
+		    height: 133px !important;
+    		padding-top: 17px;
+		}
+		.song_library_img , .payments_img, .personal_info_img, .session_calender_img, .logout_img{
+			height: 70px !important;
+		}
+
+		.emergency_conctact, .medical_info, .personal_information{
+			height: 230px !important;
+		   	padding: 30px ;
+		}	
+		.emergency_conctact img, .medical_info img, .personal_information img{
+			height: 100px !important;
+		   	
+		}
+
+		.billing_menu, .payment_menu{
+			height: 320px !important; 
+		}
+		.payment_page6{
+			height: auto;
+			width: auto;
+		}
+		.padding_top {
+		    padding: 80px 0px !important;
+		}
+		.payment_page6 img{
+			height: 100px !important;
+		} */
+}
+@media screen  and (min-width: 561px) and (max-width: 660px){
+	.respo_top{
+		margin-top: 10px;
+	}
+	.phase1{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	/* .song_name{
+		font-size: 22px;
+	
+	} */
+	/* .hidden_div{
+		padding: 7% 9%;
+	} */
+	/* .container_decoration{
+   			min-height: auto;
+   		}
+   		.fa_font{
+   			font-size: 17px;
+   		}
+		.song_library, .payments, .personal_info, .session_calender, .logout{
+		    height: 133px !important;
+    		padding-top: 17px;
+		}
+		.song_library_img , .payments_img, .personal_info_img, .session_calender_img, .logout_img{
+			height: 70px !important;
+		}
+
+		.emergency_conctact, .medical_info, .personal_information{
+			height: 250px !important;
+		   	padding: 30px ;
+		}	
+		.emergency_conctact img, .medical_info img, .personal_information img{
+			height: 100px !important;
+		   	
+		}
+
+		.billing_menu, .payment_menu{
+			height: 320px !important; 
+		}
+		.payment_page6{
+			height: auto;
+			width: auto;
+		}
+		.padding_top {
+		    padding: 80px 0px !important;
+		}
+		.payment_page6 img{
+			height: 100px !important;
+		} */
+	
+}
+
+@media screen  and (min-width: 661px) and (max-width: 760px){
+	.respo_top{
+		margin-top: 10px;
+	}
+	.phase1{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	/* .song_name{
+		font-size: 22px;
+	
+	} */
+	/* .hidden_div{
+		padding: 7% 11%;
+	} */
+	/* .fa_font{
+   			font-size: 18px;
+   		}
+		.song_library, .payments, .personal_info, .session_calender, .logout{
+		    height: 147px !important;
+    		padding-top: 28px;
+		}
+		.song_library_img , .payments_img, .personal_info_img, .session_calender_img, .logout_img{
+			height: 70px !important;
+		}
+
+		.emergency_conctact, .medical_info, .personal_information{
+			height: 300px !important;
+		   	padding: 50px ;
+		}	
+		.emergency_conctact img, .medical_info img, .personal_information img{
+			height: 120px !important;
+		   	
+		}
+
+		.billing_menu, .payment_menu{
+			height: 333px;
+		}
+		.payment_page6{
+			height: auto;
+			width: auto;
+		}
+		.padding_top {
+		    padding: 95px 0px !important;
+		}
+		.payment_page6 img{
+			height: 100px !important;
+		} */
+}
+@media screen  and (min-width: 761px) and (max-width: 1024px){
+	
+	.phase1{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+}
+
+/*  Responsive Height */
+@media only screen  and (min-height: 360px) and (max-height:  500px){
+			
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 48px !important;
+		}
+
+		/*.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 100px !important;
+		   	
+		}*/	
+		.p_i1, .m_i1, .e_c1{
+			margin-top: 16px ;
+			margin-bottom: 15px ;
+		}
+		
+		.pay_m img, .b_L1 img {
+			height: 200px !important;
+		} 
+
+}
+
+@media only screen  and (min-height: 501px) and (max-height:  600px){
+	
+		
+		
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 54px !important;
+		}
+
+		/*.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 127px !important;
+		   	
+		}*/	
+		
+		.pay_m img, .b_L1 img {
+			height: 250px !important;
+		} 
+
+}
+
+@media only screen  and (min-height: 601px) and (max-height:  700px){
+		.fa_font{
+   			font-size: 20px;
+   		}
+		
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 68px !important;
+		}
+
+		/*.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 140px !important;
+			
+		}*/	
+		.p_i1, .m_i1, .e_c1{
+			margin-top: 40px ;
+			margin-bottom: 40px ;
+		}
+		.e_c1 .fa_font, .m_i1 .fa_font, .p_i1 .fa_font{
+			/*font-size: 20px !important;*/
+		}
+		
+		.pay_m img, .b_L1 img {
+			height: 280px !important;
+		} 
+		.respo_padding_0{
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+		.respo_margin{
+			margin-top: 0px;
+		}
+
+}
+
+@media only screen  and (min-height: 701px) and (max-height:  800px){
+		.fa_font{
+   			font-size: 17px;
+   		}
+		
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 90px !important;
+		}
+
+		/*.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 180px !important;
+		}*/
+		.p_i1, .m_i1, .e_c1{
+			margin-top: 50px ;
+			margin-bottom: 50px ;
+		}
+		.pay_m img, .b_L1 img {
+			height: 300px !important;
+		} 
+
+}
+@media only screen  and (min-height: 801px) and (max-height:  900px){
+		.fa_font{
+   			font-size: 17px;
+   		}
+		
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 95px !important;
+		}
+
+		/*.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 205px !important;
+		}*/
+		
+		.p_i1, .m_i1, .e_c1{
+			margin-top: 50px !important;
+			margin-bottom: 50px !important;
+		}
+		.pay_m img, .b_L1 img {
+			height: 320px !important;
+		} 
+
+}
+@media only screen  and (min-height: 901px) and (max-height:  1024px){
+		.fa_font{
+   			font-size: 20px !important;
+   		}
+		
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 115px !important;
+		}
+
+		/*.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 232px !important;
+		}
+		*/
+		.e_c1, .m_i1, .p_i1 {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+		.pay_m img, .b_L1 img {
+			height: 350px !important;
+		}
+
+}
+
+
+@media only screen and (min-height: 480px){
+	
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 43px !important ;
+			margin: 1px auto;
+		}
+		.p_i1, .m_i1, .e_c1 {
+			margin-top: 24px;
+			margin-bottom: 24px;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 10px !important;
+			padding-bottom: 10px !important;
+		}	
+}
+@media only screen  and (min-height: 533px){
+	
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 55px !important ;
+			margin: 1px auto;
+		}
+		.p_i1, .m_i1, .e_c1 {
+			margin-top: 33px;
+			margin-bottom: 32px;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 15px !important;
+			padding-bottom: 15px !important;
+		}
+}
+@media only screen  and (min-height: 566px){
+	
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 55px !important ;
+			
+		}	
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 15px !important;
+			padding-bottom: 15px !important;
+		}		
+}		
+@media only screen  and (min-height: 568px){
+	
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 55px !important ;
+			margin: 3px auto;
+		}	
+		.p_i1, .m_i1, .e_c1{
+			margin-top: 35px ;
+			margin-bottom: 35px ;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 15px !important;
+			padding-bottom: 15px !important;
+		}
+		
+
+}
+@media only screen  and (min-height: 640px){
+	
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 66px !important ;
+			margin: 0px auto
+		}	
+		.p_i1, .m_i1, .e_c1 {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 25px !important;
+			padding-bottom: 25px !important;
+		}
+	
+}
+@media only screen  and (min-height: 667px){
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 62px !important ;
+			margin: 2px auto;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 25px !important;
+			padding-bottom: 25px !important;
+		}
+		
+}
+@media only screen and (min-height: 731px){
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 62px !important ;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 40px !important;
+			padding-bottom: 40px !important;
+		}
+				
+}
+@media only screen  and (min-height: 732px){
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 62px !important ;
+			margin: 0px auto;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 40px ;
+			padding-bottom: 40px ;
+		}
+			
+}
+@media only screen  and (min-height: 860px){
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 60px !important ;
+			margin-top: 30px;
+		}
+		.s_l p , .b_h p, .p_i p, .s_c p, .log_out p{
+			margin-bottom: 30px !important;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 45px ;
+			padding-bottom: 45px ;
+		}
+		
+}
+@media only screen  and (min-height: 854px){
+		.logo{
+			margin-top: 0px !important;
+			margin-bottom: 0px !important;
+		}
+		.side_bar ul li {
+			line-height: 15px !important;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 45px ;
+			padding-bottom: 45px ;
+		}
+		
+}
+@media only screen  and (min-height: 1024px){
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 60px !important ;
+			margin-top: 40px;
+		}
+		.s_l p , .b_h p, .p_i p, .s_c p, .log_out p{
+			margin-bottom: 40px !important;
+		}
+		.phase1 .c_s, .phase1 .s_c, .phase1 .s_d, .phase1 .l_o {
+			padding-top: 55px ;
+			padding-bottom: 55px ;
+		}
+		
+}
+
+/*  iPhone 5 */
+@media only screen
+   	and (min-device-width: 320px) 
+  	and (max-device-width: 568px)
+  	and (-webkit-min-device-pixel-ratio: 2) {
+   		.container_decoration{
+   			min-height: auto;
+   		}
+		.padding_20_25 {
+			padding: 25% 40px;
+		}
+		/* .song_name{
+		font-size: 18px;
+	
+		} */
+   		/* .fa_font{
+   			font-size: 17px;
+   		} */
+		
+		/*  .s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 62px !important;
+		} 
+
+			
+
+		
+		.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 127px !important;
+		   	
+		}	
+		
+	
+		.pay_m img, .b_L1 img {
+			height: 250px !important;
+		} */		
+   }
+
+
+/** Iphone 6**/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) { 
+  	.container_decoration{
+   			min-height: auto;
+   		}
+	.song_name{
+		font-size: 15px;
+	
+	}
+	.hidden_div{
+		padding: 9% 12% 9% 11.5%;	
+	}
+	.dropdown-menu {
+    margin-top: 50%;
+    margin-left: -46px;
+    padding: 5px 10px;
+	}
+	.padding_top_30{
+		padding-top: 30px;
+	}
+	.margin_top_50{
+	margin-top: 50px;
+	}
+	/* .p_i1, .m_i1, .e_c1{
+		margin-top: 37px ;
+		margin-bottom: 37px ;
+	} */
+	
+		
+/* 
+   		.fa_font{
+   			font-size: 17px;
+   		}
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 62px !important ;
+		}
+
+		.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 163px !important;
+		}
+
+		.pay_m img, .b_L1 img {
+			height: 280px !important;
+		}
+
+
+		.padding_top {
+		    padding: 95px 0px !important;
+		}
+		.payment_page6 img{
+			height: 100px !important;
+		} */
+}
+/** Iphone 6+ **/
+@media only screen 
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)  
+  and (-webkit-min-device-pixel-ratio: 3) { 
+  	.container_decoration{
+   			min-height: auto;
+   		}
+	/*  .song_name{
+		font-size: 18px;
+	}  */
+	.hidden_div{
+		padding: 9% 13%;
+	}	
+	.dropdown-menu {
+     	margin-top: 55%;
+   		margin-left: -57px;
+   		padding: 5px 15px;
+	}
+	.padding_top_30{
+	padding-top: 30px;
+	}
+	.margin_top_50{
+	margin-top: 50px;
+	}
+
+		/* .fa_font{
+   			font-size: 20px;
+   		}
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 96px !important;
+		}
+
+		.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 183px !important;
+		   	
+		}	
+
+		.pay_m img, .b_L1 img {
+			height: 300px !important;
+		}
+
+		.padding_top {
+		    padding: 95px 0px !important;
+		}
+		 */	
+}
+/** iPad **/
+@media only screen 
+	and (min-device-width: 768px)
+	and (max-device-width: 1024px)  
+	and (-webkit-min-device-pixel-ratio: 2) { 
+		
+		.container_decoration{
+   			min-height: auto;
+   		}
+   		.side_bar{
+		margin-left: 90%;
+		}
+		.padding_20_25 {
+			padding: 15% 70px;
+		}
+	/* 		.fa_font{
+   			font-size: 30px;	
+   		}
+
+		.s_l img , .b_h img, .p_i img, .s_c img, .log_out img{
+			height: 153px !important;
+		}
+
+		.e_c1 img, .m_i1 img, .p_i1 img{
+			height: 264px  !important;
+		   
+		}	
+		 
+
+		.pay_m img, .b_L1 img {
+			height: 400px !important;
+		}
+	 */	
+}
