@@ -11,7 +11,7 @@ console.log($localStorage.UserType);
 				{
 					
 					$scope.showAlert("Account inactive please contact Rockchoir Admin ");
-					$localStorage.$reset();
+					//Commenting out, why would we clear the data if they're logged out?
 					localStorage.clear();
 					location.href = "#/login";
 				}
@@ -73,7 +73,7 @@ console.log($localStorage.UserType);
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -92,7 +92,7 @@ console.log($localStorage.UserType);
 				{
 					
 					$scope.showAlert("Account inactive please contact Rockchoir Admin ");
-					$localStorage.$reset();
+					//Commenting out, why would we clear the data if they're logged out?
 					localStorage.clear();
 					location.href = "#/login";
 				}
@@ -115,7 +115,7 @@ console.log($localStorage.UserType);
 				/* $ionicLoading.hide();
 				$scope.showAlert("Account inactive please contact Rockchoir Admin ");
 				
-				$localStorage.$reset();
+				//Commenting out, why would we clear the data if they're logged out?
 				localStorage.clear();
 				location.href = "#/login"; */
 		  $localStorage.UserType ="Active Choir Leader";
@@ -235,7 +235,7 @@ if(typeof $localStorage.userData == "undefined")
 				{
 					$ionicLoading.hide();
 					$scope.showAlert("Session expired. Please Login ");
-					$localStorage.$reset();
+					//Commenting out, why would we clear the data if they're logged out?
 					localStorage.clear();
 					location.href = "#/login";
 				}
@@ -317,7 +317,7 @@ if(typeof $localStorage.userData == "undefined")
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -447,7 +447,7 @@ if(typeof $localStorage.userData == "undefined")
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -521,7 +521,7 @@ if(typeof $localStorage.userData == "undefined")
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -639,7 +639,7 @@ $ionicLoading.hide();
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -728,7 +728,7 @@ $ionicLoading.hide();
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -809,7 +809,7 @@ $ionicLoading.hide();
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -1059,7 +1059,7 @@ $ionicLoading.hide();
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -1095,7 +1095,7 @@ $ionicLoading.hide();
 		{
 			$ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		
@@ -1538,10 +1538,11 @@ $ionicLoading.hide();
 		userService.createRecord(choirsession, item.first_name, function(data) {
 		if(data == '"Session expired or invalid"')
 		{
-		   $ionicLoading.hide();
+		    $ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
-			localStorage.clear();
+			//Commenting out, why would we clear the data if they're logged out?
+			//$localStorage.$reset();
+			//localStorage.clear();
 			location.href = "#/login";
 		}
 		else
@@ -1697,8 +1698,8 @@ $ionicLoading.hide();
 		{
 		   $ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
-			localStorage.clear();
+			//$localStorage.$reset();
+			//localStorage.clear();
 			location.href = "#/login";
 		}
 		else
@@ -1731,8 +1732,8 @@ $ionicLoading.hide();
 						{
 						   $ionicLoading.hide();
 							$scope.showAlert("Session expired. Please Login ");
-							$localStorage.$reset();
-							localStorage.clear();
+							//Commenting out, why would we clear the data if they're logged out?
+							//localStorage.clear();
 							location.href = "#/login";
 						}
 						else
@@ -1799,7 +1800,7 @@ if (typeof $localStorage.activeSessionId !== "undefined" ) {
 		{
 		   $ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		}
@@ -1853,7 +1854,7 @@ if (typeof $localStorage.activeSessionId !== "undefined" ) {
 		{
 		   $ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		}
@@ -1894,7 +1895,7 @@ if (typeof $localStorage.activeSessionId !== "undefined" ) {
 		{
 		   $ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		}
@@ -1980,7 +1981,7 @@ if (typeof $localStorage.activeSessionId !== "undefined" ) {
 		{
 		   $ionicLoading.hide();
 			$scope.showAlert("Session expired. Please Login ");
-			$localStorage.$reset();
+			//Commenting out, why would we clear the data if they're logged out?
 			localStorage.clear();
 			location.href = "#/login";
 		}

@@ -287,13 +287,11 @@ angular.module('starter')
         });
         $http({
             method: "GET",
-            url: 'http://britanniaadmin.lets-go-digital.co.uk/TestRC/Phase1/create.php?sessionID=' + choirsession + '&qrdata=' + qrdata + '&token=' + $localStorage.userData.SessionId
+            url: url+'create.php?sessionID=' + $localStorage.activeSessionId + '&qrdata=' + qrdata + '&token=' + $localStorage.userData.SessionId
           })
           .success(function(data) {
             success(data);
             console.log(data);
-            // $scope.showAlert("Data Uploaded to CRM");
-            // $ionicLoading.hide();
           });
       },
     }
