@@ -1,0 +1,79 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "rockchoir.allaboutonline.co.uk"
+        }
+    }
+}

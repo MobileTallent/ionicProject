@@ -1,0 +1,24 @@
+<ion-view title="Choir Name">
+  <ion-content>
+    <div class="container phase1">
+<!--       <div class="sessionList  list">
+
+        <a class="item item-icon-left" href="#/venue/{{venue.Id}}" ng-repeat="venue in VenueData | orderBy:'Name'">
+          <i class="icon ion-location"></i>
+          {{venue.Name}}
+        </a>
+
+      </div> -->
+		<ion-alpha-scroll ng-model="model" key="keyName" subheader="true">
+			<ion-alpha-scroll ng-model="model" key="keyName">
+				<a class="item item-icon-left" href="#/venue/{{venue.Id}}" ng-repeat="venue in VenueData | orderBy:'Name'">
+				  <i class="icon ion-location"></i>
+				  {{venue.Name}}
+				</a>
+			</ion-alpha-scroll>		
+		</ion-alpha-scroll>
+
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>

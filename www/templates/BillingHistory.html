@@ -1,0 +1,80 @@
+<ion-view title="Billing History" hide-back-button="true" cache-view="false"   >  
+    <ion-content>
+
+
+	<div class="fluid-container container_decoration background_blue"  >
+	
+		<form role="form" name="BillingHistoryFilterFrm"  >
+		
+
+	    <div class="container">
+	    	
+			<div class="top_container ">
+	    		<div class="">
+	    			<button ng-click="home()" class="color_yellow font_size_18 transparentButton ">RETURN</button>
+	    		
+	    			<button ng-disabled="BillingHistoryFilterFrm.$invalid"  ng-click="BillingHistoryFilter(BillingHistory1)" type="submit" class="color_yellow transparentButton font_size_18 pull-right">FILTER</button>
+	    		</div>
+	    	</div>
+			
+			
+	    	<div class="row top_container ">
+	    		<div class=" col-sm-4 row_0">	
+	    			<img src="image/rclogo.png" alt="logo" class="img-responsive margin_auto  img_cust_css ">
+	    		</div>
+	    		<div class=" col-sm-8  row_0 margin_top_10 respo_margin">
+	    			<div class="row margin_top_10">
+	    				<label class="item item-input transparentInput  width_70">FROM</label>
+			    		<input type="date" value="2016-01-01" class="width_60_pr background_yellow " ng-init="BillingHistory1.From='2016-01-01'"  ng-model="BillingHistory1.From" name="FROM" placeholder="2016-01-01"   required>
+	    			</div>
+	    			<div class="row  ">
+	    				<label class="item   item-input transparentInput  margin_top_10 width_70">TO</label>
+			    		<input type="date" value="2016-12-01" class=" width_60_pr background_yellow  margin_top_11" ng-init="BillingHistory1.To='2016-12-01'" placeholder="2016-12-01" ng-model="BillingHistory1.To"    name="TO" required>
+	    			</div>
+		    	</div>
+	    	</div>
+	    </div>	
+		</form>
+		<div class="table_container margint_top_30">
+		    <div class="table-responsive ">          
+				<table class="table borderless color_white">
+					<thead class="background_navi_blue">
+						<tr>
+							<!--th class="padding_10_30">TRANSACTION NO.</th-->
+							<th>DATE</th>
+							<th>AMOUNT</th>
+						</tr>
+					</thead>
+					<tbody class="font_size_12 background_blue">
+						<tr ng-repeat="BillingHistory in BillingHistoryData" >
+							<!--td class="word_wrap1 text-center ">{{BillingHistory.Invoice__c}}</td-->
+							<td class="word_wrap1 ">{{BillingHistory.SystemModstamp}}</td>
+							<td class="word_wrap1 ">£ {{BillingHistory.Amount__c}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	    
+	  
+
+	</div>
+  </ion-content>
+</ion-view>
+<style>
+
+button.transparentButton{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+.img_cust_css {
+    min-width: 90px;
+}
+.width_70{
+	width: 70px;
+}
+</style>

@@ -1,0 +1,16 @@
+
+<ion-view title="Sessions not uploaded" cache-view="false">  
+  <ion-content>
+    <div class="container ">
+      <div class="sessionList list">
+	<!--ng-click="upload(item.SelectedScheduleName)"-->
+        <a class="item item-icon-right"  href="#/upload/{{item.SelectedScheduleName}}" ng-repeat="item in SessionGroups | unique:'SelectedScheduleName'  track by $index">
+          <i class="icon ion-ios-arrow-right"></i>
+          <h2><strong>{{item.sessionName}} - {{item.sessionTime}}</strong></h2>
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+</ion-view>

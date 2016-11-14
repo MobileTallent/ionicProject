@@ -1,0 +1,17 @@
+<ion-view title="Attendance">
+  <ion-content>
+    <div class="container">
+      <div class="sessionList list">
+
+        <a class="item text-center" href="#" ng-repeat="session in sessionData">
+          <h2>{{session.Name}}</h2>
+        </a>
+
+      </div>
+    </div>
+    <!-- /.container -->
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+    <div class="title" ng-click="markActive(sessionData)">Mark As Active</div>
+  </div>
+</ion-view>
