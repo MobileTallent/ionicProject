@@ -10,8 +10,8 @@
         <param name="browser-package" value="BarcodeScanner" />
     </feature>
     <name>RockChoir</name>
-    <description>Hello World sample application that responds to the deviceready event.</description>
-    <author email="support@phonegap.com" href="http://phonegap.com">PhoneGap Team</author>
+    <description>RockChoir application</description>
+    <author email="support@allaboutonline.co.uk" href="https://allaboutonline.co.uk">AllAboutOnline</author>
     <content src="index.html" />
     <icon src="icon.png" />
     <access origin="*" />
