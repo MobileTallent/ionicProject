@@ -1401,8 +1401,6 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 						var merged = previousObject.concat(currentObject);
 						$localStorage.SessionSubitems = merged;
 					}
-					//Recursive call function
-					qrscanfunc();
 
 				}
 			},
@@ -1415,6 +1413,8 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 				"formats": "QR_CODE", // What the camera is scanning for
 				"orientation": "landscape" // Android only (portrait|landscape)
 			});
+			//Recursive call function
+			qrscanfunc();
 		} else {
 			$scope.showAlert("Please Select Session First");
 		}
