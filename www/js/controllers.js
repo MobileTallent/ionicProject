@@ -204,8 +204,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 					//Commenting out, why would we clear the data if they're logged out?
 					localStorage.clear();
 					location.href = "#/login";
-				} else
-					{
+				} else {
 					if (data.length > 0) {
 						// $scope.showAlert('');
 						//	console.log(data);
@@ -1371,49 +1370,105 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 
 	function qrscanfunc() {
 
-		if (typeof $localStorage.activeSessionName !== "undefined") {
-			cordova.plugins.barcodeScanner.scan(
-				function (result) {
+		 		if (typeof $localStorage.activeSessionName !== "undefined") {
+		/*cordova.plugins.barcodeScanner.scan(
+		function (result) {
 
-				if (result.text !== "") {
+		if (result.text !== "") {
 
-					var element = {}
-					element.sessionID = $localStorage.activeSessionId;
-					element.sessionName = $localStorage.ActiveSessionNameToDisplay;
-					element.sessionTime = $localStorage.ActiveSessionTimeToDisplay;
-					element.SelectedScheduleName = $localStorage.SelectedScheduleName;
+		var element = {}
+		element.sessionID = $localStorage.activeSessionId;
+		element.sessionName = $localStorage.ActiveSessionNameToDisplay;
+		element.sessionTime = $localStorage.ActiveSessionTimeToDisplay;
+		element.SelectedScheduleName = $localStorage.SelectedScheduleName;
 
-					$scope.SessionItems.push(element);
-					$scope.SessionSubitems.push(element);
+		$scope.SessionItems.push(element);
+		$scope.SessionSubitems.push(element);
 
-					$localStorage.SessionItems = $scope.SessionItems;
-					if ($localStorage.SessionSubitems == undefined) {
-						$localStorage.SessionSubitems = $scope.SessionSubitems;
-					} else {
-						var currentObject = $scope.SessionSubitems.slice(-1)[0];
-						var previousObject = $localStorage.SessionSubitems;
+		$localStorage.SessionItems = $scope.SessionItems;
+		if ($localStorage.SessionSubitems == undefined) {
+		$localStorage.SessionSubitems = $scope.SessionSubitems;
+		} else {
+		var currentObject = $scope.SessionSubitems.slice(-1)[0];
+		var previousObject = $localStorage.SessionSubitems;
 
-						var merged = previousObject.concat(currentObject);
-						$localStorage.SessionSubitems = merged;
-					}
-				}
-			},
-				function (error) {
-				alert("Scanning failed: " + error);
-			}, {
-				"preferFrontCamera": true, // iOS and Android
-				"showFlipCameraButton": true, // iOS and Android
-				"prompt": "Place the QR-Code inside the scan area", // supported on Android only
-				"formats": "QR_CODE", // What the camera is scanning for
-				"orientation": "landscape" // Android only (portrait|landscape)
-			});
+		var merged = previousObject.concat(currentObject);
+		$localStorage.SessionSubitems = merged;
+		}
+		}
+		},
+		function (error) {
+		alert("Scanning failed: " + error);
+		}, {
+		"preferFrontCamera": true, // iOS and Android
+		"showFlipCameraButton": true, // iOS and Android
+		"prompt": "Place the QR-Code inside the scan area", // supported on Android only
+		"formats": "QR_CODE", // What the camera is scanning for
+		"orientation": "landscape" // Android only (portrait|landscape)
+		});
 
 		} else {
-			$scope.showAlert("Please Select Session First");
-		}
-		//Recursive call function
-		window.location.reload(true);
+		$scope.showAlert("Please Select Session First");
+		} */
+		cordova.plugins.barcodeScanner.then(function (imageData) {
+			if (imageData.text !== "") {
+
+				console.log($localStorage.activeSessionId);
+				console.log($localStorage.ActiveSessionNameToDisplay);
+				console.log($localStorage.ActiveSessionTimeToDisplay);
+				counter++;
+				var element = {}
+				element.first_name = imageData.text;
+				//element.first_name = "123456" ;
+				element.sessionID = $localStorage.activeSessionId;
+				element.sessionName = $localStorage.ActiveSessionNameToDisplay;
+				element.sessionTime = $localStorage.ActiveSessionTimeToDisplay;
+				element.SelectedScheduleName = $localStorage.SelectedScheduleName;
+
+				$scope.SessionItems.push(element);
+				$scope.SessionSubitems.push(element);
+				//$scope.showAlert("first_name:"+ element.first_name+" sessionName : "+element.sessionName+" sessionTime : "+element.sessionTime);
+
+				$localStorage.SessionItems = $scope.SessionItems;
+				if ($localStorage.SessionSubitems == undefined) {
+					$localStorage.SessionSubitems = $scope.SessionSubitems;
+				} else {
+					var currentObject = $scope.SessionSubitems.slice(-1)[0];
+					console.log(currentObject);
+					var previousObject = $localStorage.SessionSubitems;
+					console.log(previousObject);
+
+					var merged = previousObject.concat(currentObject);
+					$localStorage.SessionSubitems = merged;
+				}
+
+				console.log($localStorage.SessionSubitems);
+				console.log($localStorage.SessionItems);
+				var confirmPopup1 = $ionicPopup.confirm({
+						title: 'Scan successfully',
+						template: '<p>You want to go back to scanning view</p>',
+						cancelText: 'No',
+						okText: 'Yes'
+					});
+				confirmPopup1.then(function (res) {
+					if (res) {
+						qrscanfunc();
+					} else {
+						$state.go("home1");
+					}
+				});
+			}
+
+		}, function (error) {
+			$state.go("home1");
+			$scope.showAlert("error:" + error);
+		});
 	}
+	else {
+		$scope.showAlert("Please Select Session First");
+	}
+
+}
 	$scope.sessionSubgroups = $localStorage.SessionSubitems;
 
 	$scope.SessionGroups = $localStorage.SessionSubitems;
@@ -1424,86 +1479,86 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 
 	$scope.sessionAction = function (info) {
 
-		$ionicLoading.show({
-			content: 'Loading',
-			animation: 'fade-in',
-			showBackdrop: true,
-			maxWidth: 200,
-			showDelay: 0
-		});
+	$ionicLoading.show({
+		content: 'Loading',
+		animation: 'fade-in',
+		showBackdrop: true,
+		maxWidth: 200,
+		showDelay: 0
+	});
 
-		//console.log(info.Name);
-		$scope.ActivebrandNameS = $filter('filter')($localStorage.VenueData, {
-				'Id': info.Venue__c
-			}, true);
+	//console.log(info.Name);
+	$scope.ActivebrandNameS = $filter('filter')($localStorage.VenueData, {
+			'Id': info.Venue__c
+		}, true);
 
-		userService.getSelectedSessionTime(info.Name, function (data) {
-			if (data == '"Session expired or invalid"') {
-				$ionicLoading.hide();
-				$scope.showAlert("Session expired. Please Login ");
-				//$localStorage.$reset();
-				//localStorage.clear();
-				location.href = "#/login";
-			} else {
-				$ionicLoading.hide();
-				$localStorage.ActiveSessionTimeToDisplay = data.Records[0].Time_Window__c;
-				var date = data.Records[0].Start_time__c.split("T");
-				var days = date[0].split("-");
-				var Start_time__c = days[2] + "/" + days[1] + "/" + days[0];
-				var confirmPopup = $ionicPopup.confirm({
-						title: 'Confirm',
-						template: '<p> You have clicked on <span style="color:green;font-style: italic;">' + $scope.ActivebrandNameS[0].Name + ',  Date :' + Start_time__c + ' </span> . Do you wish to continue?</p>',
-						cancelText: 'No',
-						okText: 'Yes'
-					});
-				confirmPopup.then(function (res) {
-					if (res) {
-						$localStorage.activeSessionId = info.Id;
-						$localStorage.activeSessionName = info.Name;
-						$ionicLoading.show({
-							content: 'Loading',
-							animation: 'fade-in',
-							showBackdrop: true,
-							maxWidth: 200,
-							showDelay: 0
-						});
-
-						userService.getSelectedChoirName(info.Venue__c, function (data) {
-							if (data == '"Session expired or invalid"') {
-								$ionicLoading.hide();
-								$scope.showAlert("Session expired. Please Login ");
-								//Commenting out, why would we clear the data if they're logged out?
-								//localStorage.clear();
-								location.href = "#/login";
-							} else {
-
-								$scope.ActivebrandName = $localStorage.ActiveSessionNameToDisplay = data.Records[0].Name;
-								console.log($localStorage.ActiveSessionNameToDisplay);
-								angular.element(document.getElementById('activeSession')).html($localStorage.ActiveSessionNameToDisplay);
-								//document.getElementById("activeSession").html($localStorage.ActiveSessionNameToDisplay);
-							}
-						});
-
-						$localStorage.SelectedScheduleName = info.Name;
-
-						//$localStorage.ActiveSessionTimeToDisplay= $scope.ActivebrandTimeS[0].Time_Window__c;
-
-
-						console.log($localStorage.activeSessionId);
-						console.log($localStorage.ActiveSessionNameToDisplay);
-						console.log($localStorage.ActiveSessionTimeToDisplay);
-						$ionicLoading.hide();
-						$state.go("home1");
-						console.log($localStorage.SessionSubitems);
-					} else {
-						// console.log('You are not sure');
-					}
+	userService.getSelectedSessionTime(info.Name, function (data) {
+		if (data == '"Session expired or invalid"') {
+			$ionicLoading.hide();
+			$scope.showAlert("Session expired. Please Login ");
+			//$localStorage.$reset();
+			//localStorage.clear();
+			location.href = "#/login";
+		} else {
+			$ionicLoading.hide();
+			$localStorage.ActiveSessionTimeToDisplay = data.Records[0].Time_Window__c;
+			var date = data.Records[0].Start_time__c.split("T");
+			var days = date[0].split("-");
+			var Start_time__c = days[2] + "/" + days[1] + "/" + days[0];
+			var confirmPopup = $ionicPopup.confirm({
+					title: 'Confirm',
+					template: '<p> You have clicked on <span style="color:green;font-style: italic;">' + $scope.ActivebrandNameS[0].Name + ',  Date :' + Start_time__c + ' </span> . Do you wish to continue?</p>',
+					cancelText: 'No',
+					okText: 'Yes'
 				});
+			confirmPopup.then(function (res) {
+				if (res) {
+					$localStorage.activeSessionId = info.Id;
+					$localStorage.activeSessionName = info.Name;
+					$ionicLoading.show({
+						content: 'Loading',
+						animation: 'fade-in',
+						showBackdrop: true,
+						maxWidth: 200,
+						showDelay: 0
+					});
 
-			}
-		});
+					userService.getSelectedChoirName(info.Venue__c, function (data) {
+						if (data == '"Session expired or invalid"') {
+							$ionicLoading.hide();
+							$scope.showAlert("Session expired. Please Login ");
+							//Commenting out, why would we clear the data if they're logged out?
+							//localStorage.clear();
+							location.href = "#/login";
+						} else {
 
-	}
+							$scope.ActivebrandName = $localStorage.ActiveSessionNameToDisplay = data.Records[0].Name;
+							console.log($localStorage.ActiveSessionNameToDisplay);
+							angular.element(document.getElementById('activeSession')).html($localStorage.ActiveSessionNameToDisplay);
+							//document.getElementById("activeSession").html($localStorage.ActiveSessionNameToDisplay);
+						}
+					});
+
+					$localStorage.SelectedScheduleName = info.Name;
+
+					//$localStorage.ActiveSessionTimeToDisplay= $scope.ActivebrandTimeS[0].Time_Window__c;
+
+
+					console.log($localStorage.activeSessionId);
+					console.log($localStorage.ActiveSessionNameToDisplay);
+					console.log($localStorage.ActiveSessionTimeToDisplay);
+					$ionicLoading.hide();
+					$state.go("home1");
+					console.log($localStorage.SessionSubitems);
+				} else {
+					// console.log('You are not sure');
+				}
+			});
+
+		}
+	});
+
+}
 
 	if (typeof $localStorage.activeSessionId !== "undefined") {
 
@@ -1513,11 +1568,11 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 				'Id': $localStorage.activeSessionId
 			}, true);
 	}
-	/*********************************************************************************/
-	/************************** get choir list ***********************************/
-	/*********************************************************************************/
+		/*********************************************************************************/
+		/************************** get choir list ***********************************/
+		/*********************************************************************************/
 
-	$scope.clickMe = function () {
+		$scope.clickMe = function () {
 
 		$ionicLoading.show({
 			content: 'Loading',
@@ -1566,190 +1621,159 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 
 	};
 
-	/*********************************************************************************/
-	/************************** GET LOCATION LIST ***********************************/
-	/*********************************************************************************/
+		/*********************************************************************************/
+		/************************** GET LOCATION LIST ***********************************/
+		/*********************************************************************************/
 
-	if (typeof venueId !== "undefined") {
-		$ionicLoading.show({
-			content: 'Loading',
-			animation: 'fade-in',
-			showBackdrop: true,
-			maxWidth: 200,
-			showDelay: 0
-		});
-		userService.getGroups(venueId, function (data) {
-			if (data == '"Session expired or invalid"') {
-				$ionicLoading.hide();
-				$scope.showAlert("Session expired. Please Login ");
-				//Commenting out, why would we clear the data if they're logged out?
-				localStorage.clear();
-				location.href = "#/login";
-			} else {
-
-				$localStorage.vgroupData = data.Records;
-				$scope.vgroupData = $localStorage.vgroupData;
-				// console.log($scope.groupData);
-				if ($scope.vgroupData == "") {
-					$state.go("venues");
-					$scope.showAlert("No Record Found");
-				}
-				$ionicLoading.hide();
-			}
-		});
-	}
-
-	/*********************************************************************************/
-	/************************** GET SESSION LIST ***********************************/
-	/*********************************************************************************/
-
-	if (typeof groupId !== "undefined") {
-		// console.log(groupId);
-		$ionicLoading.show({
-			content: 'Loading',
-			animation: 'fade-in',
-			showBackdrop: true,
-			maxWidth: 200,
-			showDelay: 0
-		});
-
-		userService.getSessions(groupId, function (data) {
-
-			if (data == '"Session expired or invalid"') {
-				$ionicLoading.hide();
-				$scope.showAlert("Session expired. Please Login ");
-				//Commenting out, why would we clear the data if they're logged out?
-				localStorage.clear();
-				location.href = "#/login";
-			} else {
-
-				var filter = 'Start_time__c'; //sort by group name
-				var compare = function (filter) {
-					return function (a, b) {
-						var a = a[filter],
-						b = b[filter];
-
-						if (a < b) {
-							return -1;
-						} else if (a > b) {
-							return 1;
-						} else {
-							return 0;
-						}
-					}
-				}
-
-				filter = compare(filter); //set filter
-
-				//console.log(data.Records.sort(filter));
-
-				var SessionArrayOp1 = data.Records.sort(filter);
-				console.log(SessionArrayOp1);
-				var SessionArrayOp = [];
-
-				for (var SessionCList = 0; SessionCList < SessionArrayOp1.length && SessionArrayOp.length < 10; SessionCList++) {
-					var date1 = new Date(); //todays date
-					var date2 = new Date(SessionArrayOp1[SessionCList].Start_time__c);
-
-					var differenceTravel = date2.getTime() - date1.getTime();
-					var diffDays = (differenceTravel) / (1000 * 3600 * 24);
-
-					console.log(diffDays);
-					if (diffDays > 0) {
-						console.log(diffDays);
-						SessionArrayOp.push(SessionArrayOp1[SessionCList]);
-					}
-
-				}
-
-				if (SessionArrayOp.length > 0) {
-					console.log(SessionArrayOp);
+		if (typeof venueId !== "undefined") {
+			$ionicLoading.show({
+				content: 'Loading',
+				animation: 'fade-in',
+				showBackdrop: true,
+				maxWidth: 200,
+				showDelay: 0
+			});
+			userService.getGroups(venueId, function (data) {
+				if (data == '"Session expired or invalid"') {
 					$ionicLoading.hide();
-					$localStorage.groupData = SessionArrayOp;
-					$scope.groupData = $localStorage.groupData;
+					$scope.showAlert("Session expired. Please Login ");
+					//Commenting out, why would we clear the data if they're logged out?
+					localStorage.clear();
+					location.href = "#/login";
 				} else {
 
+					$localStorage.vgroupData = data.Records;
+					$scope.vgroupData = $localStorage.vgroupData;
+					// console.log($scope.groupData);
+					if ($scope.vgroupData == "") {
+						$state.go("venues");
+						$scope.showAlert("No Record Found");
+					}
 					$ionicLoading.hide();
-					$scope.showAlert("No Record Found");
-					$state.go("home1");
 				}
-			}
-		});
-	}
-
-	/*********************************************************************************/
-	/************************** GET SCHEDULE LIST ***********************************/
-	/*********************************************************************************/
-
-	if (typeof sessionId !== "undefined") {
-		// console.log(sessionId);
-		$ionicLoading.show({
-			content: 'Loading',
-			animation: 'fade-in',
-			showBackdrop: true,
-			maxWidth: 200,
-			showDelay: 0
-		});
-		userService.getAttendance(sessionId, function (data) {
-			if (data == '"Session expired or invalid"') {
-				$ionicLoading.hide();
-				$scope.showAlert("Session expired. Please Login ");
-				//Commenting out, why would we clear the data if they're logged out?
-				localStorage.clear();
-				location.href = "#/login";
-			} else {
-
-				// console.log(data);
-				$localStorage.sessionData = data.Records;
-				$scope.sessionData = $localStorage.sessionData;
-				// console.log($scope.sessionData);
-				$ionicLoading.hide();
-			}
-		});
-	}
-
-	$scope.DisplaySessionAddress = function (Address, Name) {
-		var alertPopup = $ionicPopup.alert({
-				title: Name,
-				template: '<p style="text-align:center">' + Address + '<p>'
 			});
+		}
 
-	};
+			/*********************************************************************************/
+			/************************** GET SESSION LIST ***********************************/
+			/*********************************************************************************/
 
-	var scanneddataarray = [];
+			if (typeof groupId !== "undefined") {
+				// console.log(groupId);
+				$ionicLoading.show({
+					content: 'Loading',
+					animation: 'fade-in',
+					showBackdrop: true,
+					maxWidth: 200,
+					showDelay: 0
+				});
 
-	$scope.upload = function (SelectedScheduleName) {
+				userService.getSessions(groupId, function (data) {
 
-		console.log('$scope.sessionSubgroups : ');
-		console.log($scope.sessionSubgroups);
+					if (data == '"Session expired or invalid"') {
+						$ionicLoading.hide();
+						$scope.showAlert("Session expired. Please Login ");
+						//Commenting out, why would we clear the data if they're logged out?
+						localStorage.clear();
+						location.href = "#/login";
+					} else {
 
-		console.log('$localStorage.ScannedUploadCrm : ');
-		console.log($localStorage.ScannedUploadCrm);
+						var filter = 'Start_time__c'; //sort by group name
+						var compare = function (filter) {
+							return function (a, b) {
+								var a = a[filter],
+								b = b[filter];
 
-		var scanneddataarray = [];
+								if (a < b) {
+									return -1;
+								} else if (a > b) {
+									return 1;
+								} else {
+									return 0;
+								}
+							}
+						}
 
-		$ionicLoading.show({
-			content: 'Loading',
-			animation: 'fade-in',
-			showBackdrop: true,
-			maxWidth: 200,
-			showDelay: 0
-		});
-		var ScanneddataDisplay = 0;
-		var Scanneddata = $scope.SessionGroups;
-		if (Scanneddata.length > 0) {
+						filter = compare(filter); //set filter
 
-			for (var count = 0; count < Scanneddata.length; count++) {
-				if (Scanneddata[count].SelectedScheduleName == SelectedScheduleName) {
-					scanneddataarray.push(Scanneddata[count]);
-					UploadSessionIdCRM = {};
-					UploadSessionIdCRM.sessionID = Scanneddata[count].sessionID;
+						//console.log(data.Records.sort(filter));
+
+						var SessionArrayOp1 = data.Records.sort(filter);
+						console.log(SessionArrayOp1);
+						var SessionArrayOp = [];
+
+						for (var SessionCList = 0; SessionCList < SessionArrayOp1.length && SessionArrayOp.length < 10; SessionCList++) {
+							var date1 = new Date(); //todays date
+							var date2 = new Date(SessionArrayOp1[SessionCList].Start_time__c);
+
+							var differenceTravel = date2.getTime() - date1.getTime();
+							var diffDays = (differenceTravel) / (1000 * 3600 * 24);
+
+							console.log(diffDays);
+							if (diffDays > 0) {
+								console.log(diffDays);
+								SessionArrayOp.push(SessionArrayOp1[SessionCList]);
+							}
+
+						}
+
+						if (SessionArrayOp.length > 0) {
+							console.log(SessionArrayOp);
+							$ionicLoading.hide();
+							$localStorage.groupData = SessionArrayOp;
+							$scope.groupData = $localStorage.groupData;
+						} else {
+
+							$ionicLoading.hide();
+							$scope.showAlert("No Record Found");
+							$state.go("home1");
+						}
+					}
+				});
+			}
+
+				/*********************************************************************************/
+				/************************** GET SCHEDULE LIST ***********************************/
+				/*********************************************************************************/
+
+				if (typeof sessionId !== "undefined") {
+					// console.log(sessionId);
+					$ionicLoading.show({
+						content: 'Loading',
+						animation: 'fade-in',
+						showBackdrop: true,
+						maxWidth: 200,
+						showDelay: 0
+					});
+					userService.getAttendance(sessionId, function (data) {
+						if (data == '"Session expired or invalid"') {
+							$ionicLoading.hide();
+							$scope.showAlert("Session expired. Please Login ");
+							//Commenting out, why would we clear the data if they're logged out?
+							localStorage.clear();
+							location.href = "#/login";
+						} else {
+
+							// console.log(data);
+							$localStorage.sessionData = data.Records;
+							$scope.sessionData = $localStorage.sessionData;
+							// console.log($scope.sessionData);
+							$ionicLoading.hide();
+						}
+					});
 				}
-				ScanneddataDisplay++;
-				if (ScanneddataDisplay == Scanneddata.length) {
-					$localStorage.ScannedUploadCrm = scanneddataarray;
-					$scope.sessionSubgroups = $localStorage.ScannedUploadCrm;
-					$localStorage.UploadSessionIdCRM = $scope.UploadSessionIdCRM = UploadSessionIdCRM;
+
+					$scope.DisplaySessionAddress = function (Address, Name) {
+					var alertPopup = $ionicPopup.alert({
+							title: Name,
+							template: '<p style="text-align:center">' + Address + '<p>'
+						});
+
+				};
+
+					var scanneddataarray = [];
+
+					$scope.upload = function (SelectedScheduleName) {
 
 					console.log('$scope.sessionSubgroups : ');
 					console.log($scope.sessionSubgroups);
@@ -1757,38 +1781,69 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 					console.log('$localStorage.ScannedUploadCrm : ');
 					console.log($localStorage.ScannedUploadCrm);
 
-					console.log($scope.UploadSessionIdCRM);
+					var scanneddataarray = [];
 
-					$state.go("upload");
-					$ionicLoading.hide();
+					$ionicLoading.show({
+						content: 'Loading',
+						animation: 'fade-in',
+						showBackdrop: true,
+						maxWidth: 200,
+						showDelay: 0
+					});
+					var ScanneddataDisplay = 0;
+					var Scanneddata = $scope.SessionGroups;
+					if (Scanneddata.length > 0) {
+
+						for (var count = 0; count < Scanneddata.length; count++) {
+							if (Scanneddata[count].SelectedScheduleName == SelectedScheduleName) {
+								scanneddataarray.push(Scanneddata[count]);
+								UploadSessionIdCRM = {};
+								UploadSessionIdCRM.sessionID = Scanneddata[count].sessionID;
+							}
+							ScanneddataDisplay++;
+							if (ScanneddataDisplay == Scanneddata.length) {
+								$localStorage.ScannedUploadCrm = scanneddataarray;
+								$scope.sessionSubgroups = $localStorage.ScannedUploadCrm;
+								$localStorage.UploadSessionIdCRM = $scope.UploadSessionIdCRM = UploadSessionIdCRM;
+
+								console.log('$scope.sessionSubgroups : ');
+								console.log($scope.sessionSubgroups);
+
+								console.log('$localStorage.ScannedUploadCrm : ');
+								console.log($localStorage.ScannedUploadCrm);
+
+								console.log($scope.UploadSessionIdCRM);
+
+								$state.go("upload");
+								$ionicLoading.hide();
+							}
+
+						}
+
+					}
+
+				};
+
+					document.addEventListener('deviceready', onDeviceReady);
+					function onDeviceReady() {
+					$scope.scanBarcode = function () {
+						qrscanfunc();
+					};
+
+					var success = function (status) {
+						//alert('Message: ' + status);
+					}
+
+					var error = function (status) {
+						// alert('Error: ' + status);
+					}
+
 				}
 
-			}
+					function GetFormattedDate(dates) {
+					var date = dates.split("T");
+					var days = date[0].split("-");
+					return days[2] + "/" + days[1] + "/" + days[0];
+				}
 
-		}
-
-	};
-
-	document.addEventListener('deviceready', onDeviceReady);
-	function onDeviceReady() {
-		$scope.scanBarcode = function () {
-			qrscanfunc();
-		};
-
-		var success = function (status) {
-			//alert('Message: ' + status);
-		}
-
-		var error = function (status) {
-			// alert('Error: ' + status);
-		}
-
-	}
-
-	function GetFormattedDate(dates) {
-		var date = dates.split("T");
-		var days = date[0].split("-");
-		return days[2] + "/" + days[1] + "/" + days[0];
-	}
-
-});
+					});
