@@ -1368,7 +1368,44 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 	/*********************************************************************************/
 	/************************** QR SCAN  CODE ***********************************/
 	/*********************************************************************************/
+ // list to collect successfully scans
+  var scanned_list=[];
 
+  // callback function that will be executed everytime barcodescanner.scan ends without error
+  scannedOneItem = function (result) {
+
+    // user cancelled the scan: now check if we have something scanned already or not:
+    if(result.cancelled){
+      if(scanned_list.length>0){
+        // no items scanned, user cancelled
+        alert("Scanned items: " + scanned_list.length);
+      }
+      else{
+        alert("Scanned canceled");
+      }
+    }
+    // a item was scanned successfully - add it to list, and restart barcodescanner
+    else{
+      scanned_list.append(result.text);
+      cordova.plugins.barcodeScanner.scan(
+          scannedOneItem,
+          function (error) {
+            alert("Scanning failed: " + error);
+          }
+      );
+    }
+  }
+  Template.barcode_scanner.events({
+    'click button': function () {
+      // start scanning when button is pressed:
+      cordova.plugins.barcodeScanner.scan(
+          scannedOneItem,
+          function (error) {
+            alert("Scanning failed: " + error);
+          }
+      );
+    }
+  });
 	function qrscanfunc() {
 
 		if (typeof $localStorage.activeSessionName !== "undefined") {
@@ -1378,8 +1415,6 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 				if (result.text !== "") {
 
 					var element = {}
-					element.first_name = result.text;
-					//element.first_name = "123456" ;
 					element.sessionID = $localStorage.activeSessionId;
 					element.sessionName = $localStorage.ActiveSessionNameToDisplay;
 					element.sessionTime = $localStorage.ActiveSessionTimeToDisplay;
@@ -1387,21 +1422,17 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 
 					$scope.SessionItems.push(element);
 					$scope.SessionSubitems.push(element);
-					//$scope.showAlert("first_name:"+ element.first_name+" sessionName : "+element.sessionName+" sessionTime : "+element.sessionTime);
 
 					$localStorage.SessionItems = $scope.SessionItems;
 					if ($localStorage.SessionSubitems == undefined) {
 						$localStorage.SessionSubitems = $scope.SessionSubitems;
 					} else {
 						var currentObject = $scope.SessionSubitems.slice(-1)[0];
-						console.log(currentObject);
 						var previousObject = $localStorage.SessionSubitems;
-						console.log(previousObject);
 
 						var merged = previousObject.concat(currentObject);
 						$localStorage.SessionSubitems = merged;
 					}
-
 				}
 			},
 				function (error) {
@@ -1413,11 +1444,12 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 				"formats": "QR_CODE", // What the camera is scanning for
 				"orientation": "landscape" // Android only (portrait|landscape)
 			});
-			//Recursive call function
-			qrscanfunc();
+
 		} else {
 			$scope.showAlert("Please Select Session First");
 		}
+		//Recursive call function
+		window.location.reload(true);
 	}
 	$scope.sessionSubgroups = $localStorage.SessionSubitems;
 
