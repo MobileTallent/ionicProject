@@ -1371,7 +1371,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 	function qrscanfunc() {
 
 		if (typeof $localStorage.activeSessionName !== "undefined") {
-			cordova.plugins.barcodeScanner.scan().then(function (imageData) {
+			cordova.plugins.barcodeScanner.scan(function (imageData) {
 				if (imageData.text !== "") {
 
 					console.log($localStorage.activeSessionId);
