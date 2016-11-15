@@ -1423,7 +1423,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 			}, function (error) {
 				$state.go("home1");
 				$scope.showAlert("error:" + error);
-			});
+			}).then(function(){alert("done")});
 		} else {
 			$scope.showAlert("Please Select Session First");
 		}
