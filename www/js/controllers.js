@@ -1371,7 +1371,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 	function qrscanfunc() {
 
 		if (typeof $localStorage.activeSessionName !== "undefined") {
-			cordova.plugins.barcodeScanner.scan(function (imageData) {
+			$cordovaBarcodeScanner.scan().then(function (imageData) {
 				if (imageData.text !== "") {
 
 					console.log($localStorage.activeSessionId);
@@ -1423,7 +1423,13 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 			}, function (error) {
 				$state.go("home1");
 				$scope.showAlert("error:" + error);
-			}).then(function(){alert("done")});
+			}, {
+				"preferFrontCamera": true, // iOS and Android
+				"showFlipCameraButton": true, // iOS and Android
+				"prompt": "Place a barcode inside the scan area", // supported on Android only
+				"formats": "QR_CODE", // Just look for QR Codes
+				"orientation": "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
+			});
 		} else {
 			$scope.showAlert("Please Select Session First");
 		}
