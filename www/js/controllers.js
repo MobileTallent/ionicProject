@@ -1377,10 +1377,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 					console.log($localStorage.activeSessionId);
 					console.log($localStorage.ActiveSessionNameToDisplay);
 					console.log($localStorage.ActiveSessionTimeToDisplay);
-					counter++;
 					var element = {}
-					element.first_name = imageData.text;
-					//element.first_name = "123456" ;
 					element.sessionID = $localStorage.activeSessionId;
 					element.sessionName = $localStorage.ActiveSessionNameToDisplay;
 					element.sessionTime = $localStorage.ActiveSessionTimeToDisplay;
