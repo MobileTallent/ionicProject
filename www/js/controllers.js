@@ -1411,7 +1411,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 			}, {
 				"preferFrontCamera": true, // iOS and Android
 				"showFlipCameraButton": true, // iOS and Android
-				"prompt": "Place a barcode inside the scan area", // supported on Android only
+				"prompt": "Place the QR-Code inside the scan area", // supported on Android only
 				"formats": "QR_CODE", // What the camera is scanning for
 				"orientation": "landscape" // Android only (portrait|landscape)
 			});
