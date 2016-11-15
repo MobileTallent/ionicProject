@@ -1368,44 +1368,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 	/*********************************************************************************/
 	/************************** QR SCAN  CODE ***********************************/
 	/*********************************************************************************/
- // list to collect successfully scans
-  var scanned_list=[];
 
-  // callback function that will be executed everytime barcodescanner.scan ends without error
-  scannedOneItem = function (result) {
-
-    // user cancelled the scan: now check if we have something scanned already or not:
-    if(result.cancelled){
-      if(scanned_list.length>0){
-        // no items scanned, user cancelled
-        alert("Scanned items: " + scanned_list.length);
-      }
-      else{
-        alert("Scanned canceled");
-      }
-    }
-    // a item was scanned successfully - add it to list, and restart barcodescanner
-    else{
-      scanned_list.append(result.text);
-      cordova.plugins.barcodeScanner.scan(
-          scannedOneItem,
-          function (error) {
-            alert("Scanning failed: " + error);
-          }
-      );
-    }
-  }
-  Template.barcode_scanner.events({
-    'click button': function () {
-      // start scanning when button is pressed:
-      cordova.plugins.barcodeScanner.scan(
-          scannedOneItem,
-          function (error) {
-            alert("Scanning failed: " + error);
-          }
-      );
-    }
-  });
 	function qrscanfunc() {
 
 		if (typeof $localStorage.activeSessionName !== "undefined") {
