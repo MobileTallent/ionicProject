@@ -1391,7 +1391,6 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 
 					$scope.SessionItems.push(element);
 					$scope.SessionSubitems.push(element);
-					//$scope.showAlert("first_name:"+ element.first_name+" sessionName : "+element.sessionName+" sessionTime : "+element.sessionTime);
 
 					$localStorage.SessionItems = $scope.SessionItems;
 					if ($localStorage.SessionSubitems == undefined) {
@@ -1405,22 +1404,8 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 						var merged = previousObject.concat(currentObject);
 						$localStorage.SessionSubitems = merged;
 					}
-
-					console.log($localStorage.SessionSubitems);
-					console.log($localStorage.SessionItems);
-					var confirmPopup1 = $ionicPopup.confirm({
-							title: 'Scan successfully',
-							template: '<p>You want to go back to scanning view</p>',
-							cancelText: 'No',
-							okText: 'Yes'
-						});
-					confirmPopup1.then(function (res) {
-						if (res) {
-							qrscanfunc();
-						} else {
-							$state.go("home1");
-						}
-					});
+					//Recurive call, to stay on scanner page. DIRTY use
+					qrscanfunc();
 				}
 			}, function (error) {
 				$state.go("home1");
