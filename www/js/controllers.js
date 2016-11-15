@@ -1378,8 +1378,6 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 				if (result.text !== "") {
 
 					var element = {}
-					element.first_name = result.text;
-					//element.first_name = "123456" ;
 					element.sessionID = $localStorage.activeSessionId;
 					element.sessionName = $localStorage.ActiveSessionNameToDisplay;
 					element.sessionTime = $localStorage.ActiveSessionTimeToDisplay;
@@ -1387,21 +1385,17 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 
 					$scope.SessionItems.push(element);
 					$scope.SessionSubitems.push(element);
-					//$scope.showAlert("first_name:"+ element.first_name+" sessionName : "+element.sessionName+" sessionTime : "+element.sessionTime);
 
 					$localStorage.SessionItems = $scope.SessionItems;
 					if ($localStorage.SessionSubitems == undefined) {
 						$localStorage.SessionSubitems = $scope.SessionSubitems;
 					} else {
 						var currentObject = $scope.SessionSubitems.slice(-1)[0];
-						console.log(currentObject);
 						var previousObject = $localStorage.SessionSubitems;
-						console.log(previousObject);
 
 						var merged = previousObject.concat(currentObject);
 						$localStorage.SessionSubitems = merged;
 					}
-
 				}
 			},
 				function (error) {
@@ -1413,11 +1407,12 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 				"formats": "QR_CODE", // What the camera is scanning for
 				"orientation": "landscape" // Android only (portrait|landscape)
 			});
-			//Recursive call function
-			qrscanfunc();
+
 		} else {
 			$scope.showAlert("Please Select Session First");
 		}
+		//Recursive call function
+		window.location.reload(true);
 	}
 	$scope.sessionSubgroups = $localStorage.SessionSubitems;
 
