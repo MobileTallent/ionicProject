@@ -1334,13 +1334,14 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 						sessionCount++;
 
 						if (sessionCount == $scope.uploadedSubSessions.length) {
-							$state.go("home1");
-							$ionicLoading.hide();
-							$scope.showAlert("Data uploaded");
 							//Once data is uploaded - clear it.
 							localStorage.clear();
 							//Set active session to undefined to ensure the correct response
 							$localStorage.activeSessionName == "undefined";
+							
+							$state.go("home1");
+							$ionicLoading.hide();
+							$scope.showAlert("Data uploaded");
 						}
 
 					}
