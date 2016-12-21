@@ -1337,6 +1337,9 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 							$state.go("home1");
 							$ionicLoading.hide();
 							$scope.showAlert("Data uploaded");
+							//Once data is uploaded - clear it.
+							$localStorage.$reset();
+							localStorage.clear();
 						}
 
 					}
@@ -1369,7 +1372,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 	/*********************************************************************************/
 
 	function qrscanfunc() {
-
+			//Start of the barcode scanner method
 		if (typeof $localStorage.activeSessionName !== "undefined") {
 			$cordovaBarcodeScanner.scan({
 				"preferFrontCamera": true, // iOS and Android
@@ -1380,9 +1383,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 			}).then(function (imageData) {
 				if (imageData.text !== "") {
 
-					console.log($localStorage.activeSessionId);
-					console.log($localStorage.ActiveSessionNameToDisplay);
-					console.log($localStorage.ActiveSessionTimeToDisplay);
+
 					var element = {}
 					element.first_name = imageData.text;
 					element.sessionID = $localStorage.activeSessionId;
@@ -1398,21 +1399,20 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 						$localStorage.SessionSubitems = $scope.SessionSubitems;
 					} else {
 						var currentObject = $scope.SessionSubitems.slice(-1)[0];
-						console.log(currentObject);
 						var previousObject = $localStorage.SessionSubitems;
-						console.log(previousObject);
 
 						var merged = previousObject.concat(currentObject);
 						$localStorage.SessionSubitems = merged;
 					}
-					//Recurive call, to stay on scanner page. DIRTY use
+					//Recurive call, to stay on scanner page. DIRTY use.............But works.....Right?
 					qrscanfunc();
 				}
-			}, function (error) {
+			}, function (error) { //Couldn't find anything......
 				$state.go("home1");
 				$scope.showAlert("error:" + error);
 			});
 		} else {
+			//Should be called if a session is not selected - right?
 			$scope.showAlert("Please Select Session First");
 		}
 	}
