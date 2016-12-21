@@ -11,7 +11,7 @@ app.controller('loginPage', function ($state, $scope, $ionicPopup, $timeout, $io
 
 			$scope.showAlert("Account inactive please contact Rockchoir Admin ");
 			//Commenting out, why would we clear the data if they're logged out?
-			localStorage.clear();
+			//localStorage.clear();
 			location.href = "#/login";
 		} else if ($localStorage.UserType == 'Active Taster' || $localStorage.UserType == 'Confirmed Member') {
 			$('.HomeButton').attr("href", "#/home");
@@ -66,7 +66,7 @@ app.controller('loginPage', function ($state, $scope, $ionicPopup, $timeout, $io
 						$ionicLoading.hide();
 						$scope.showAlert("Session expired. Please Login ");
 						//Commenting out, why would we clear the data if they're logged out?
-						localStorage.clear();
+						//localStorage.clear();
 						location.href = "#/login";
 
 					} else {
@@ -81,7 +81,7 @@ app.controller('loginPage', function ($state, $scope, $ionicPopup, $timeout, $io
 
 								$scope.showAlert("Account inactive please contact Rockchoir Admin ");
 								//Commenting out, why would we clear the data if they're logged out?
-								localStorage.clear();
+								//localStorage.clear();
 								location.href = "#/login";
 							} else if (data.Records[0]['Member_Status__c'] == 'Active Taster' || data.Records[0]['Member_Status__c'] == 'Confirmed Member') {
 								$('.HomeButton').attr("href", "#/home");
