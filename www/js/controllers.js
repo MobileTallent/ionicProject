@@ -1338,8 +1338,9 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 							$ionicLoading.hide();
 							$scope.showAlert("Data uploaded");
 							//Once data is uploaded - clear it.
-							$localStorage.$reset();
 							localStorage.clear();
+							//Set active session to undefined to ensure the correct response
+							$localStorage.activeSessionName == "undefined";
 						}
 
 					}
