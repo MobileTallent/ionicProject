@@ -6,7 +6,7 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="android-build-tool" value="gradle" />
-  <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~6.0.4"/> 
+  <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~6.0."/> 
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
   <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
   <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0"/>
@@ -63,7 +63,7 @@
     <icon src="www/res/icon/ios/icon-96-xhdpi.png" platform="ios" width="76" height="76"/>
     <icon src="www/res/icon/ios/icon-144-xxhdpi.png" platform="ios" width="152" height="152"/>
     <icon src="www/res/icon/ios/icon-36-ldpi.png" platform="ios" width="29" height="29"/>
-    <icon src="www/res/icon/ios/icon-48-mdpi.png platform="ios" width="58" height="58"/>
+    <icon src="www/res/icon/ios/icon-48-mdpi.png" platform="ios" width="58" height="58"/>
     <icon src="www/res/icon/ios/icon-72-hdpi.png" platform="ios" width="87" height="87"/>
     <splash src="www/res/screen/ios/Default-568h@2x~iphone.png" platform="ios" width="640" height="1136"/>
     <splash src="www/res/screen/ios/Default-667h.png" platform="ios" width="750" height="1334"/>
