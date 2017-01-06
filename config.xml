@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="rockchoir.allaboutonline.co.uk" version="1.0.5">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="rockchoir.allaboutonline.co.uk" version="1.0.6">
   <name>RockChoir</name>
   <description>RockChoir application</description>
   <author href="https://allaboutonline.co.uk" email="support@allaboutonline.co.uk">AllAboutOnline</author>
