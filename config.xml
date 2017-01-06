@@ -9,7 +9,6 @@
   <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~6.0.4"/> 
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
   <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
-  <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0"/>
   <plugin name="cordova-plugin-media-capture" source="npm" spec="*">
 	<variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
 	<variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
