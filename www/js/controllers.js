@@ -1377,7 +1377,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 			//Start of the barcode scanner method
 		if (typeof $localStorage.activeSessionName !== "undefined") {
 			$cordovaBarcodeScanner.scan({
-				"preferFrontCamera": true, // iOS and Android
+				"preferFrontCamera": false, // iOS and Android - false by default
 				"showFlipCameraButton": true, // iOS and Android
 				"prompt": "Place a barcode inside the scan area", // supported on Android only
 				"formats": "QR_CODE", // Just look for QR Codes
