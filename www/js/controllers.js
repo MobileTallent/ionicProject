@@ -11,7 +11,7 @@ app.controller('loginPage', function ($state, $scope, $ionicPopup, $timeout, $io
 
 			$scope.showAlert("Account inactive please contact Rockchoir Admin ");
 			//Commenting out, why would we clear the data if they're logged out?
-			localStorage.clear();
+			//localStorage.clear();
 			location.href = "#/login";
 		} else if ($localStorage.UserType == 'Active Taster' || $localStorage.UserType == 'Confirmed Member') {
 			$('.HomeButton').attr("href", "#/home");
@@ -66,7 +66,7 @@ app.controller('loginPage', function ($state, $scope, $ionicPopup, $timeout, $io
 						$ionicLoading.hide();
 						$scope.showAlert("Session expired. Please Login ");
 						//Commenting out, why would we clear the data if they're logged out?
-						localStorage.clear();
+						//localStorage.clear();
 						location.href = "#/login";
 
 					} else {
@@ -81,7 +81,7 @@ app.controller('loginPage', function ($state, $scope, $ionicPopup, $timeout, $io
 
 								$scope.showAlert("Account inactive please contact Rockchoir Admin ");
 								//Commenting out, why would we clear the data if they're logged out?
-								localStorage.clear();
+								//localStorage.clear();
 								location.href = "#/login";
 							} else if (data.Records[0]['Member_Status__c'] == 'Active Taster' || data.Records[0]['Member_Status__c'] == 'Confirmed Member') {
 								$('.HomeButton').attr("href", "#/home");
@@ -1334,6 +1334,11 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 						sessionCount++;
 
 						if (sessionCount == $scope.uploadedSubSessions.length) {
+							//Once data is uploaded - clear it.
+							localStorage.clear();
+							//Set active session to undefined to ensure the correct response
+							$localStorage.activeSessionName == "undefined";
+							
 							$state.go("home1");
 							$ionicLoading.hide();
 							$scope.showAlert("Data uploaded");
@@ -1369,10 +1374,10 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 	/*********************************************************************************/
 
 	function qrscanfunc() {
-
+			//Start of the barcode scanner method
 		if (typeof $localStorage.activeSessionName !== "undefined") {
 			$cordovaBarcodeScanner.scan({
-				"preferFrontCamera": true, // iOS and Android
+				"preferFrontCamera": false, // iOS and Android - false by default
 				"showFlipCameraButton": true, // iOS and Android
 				"prompt": "Place a barcode inside the scan area", // supported on Android only
 				"formats": "QR_CODE", // Just look for QR Codes
@@ -1380,9 +1385,7 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 			}).then(function (imageData) {
 				if (imageData.text !== "") {
 
-					console.log($localStorage.activeSessionId);
-					console.log($localStorage.ActiveSessionNameToDisplay);
-					console.log($localStorage.ActiveSessionTimeToDisplay);
+
 					var element = {}
 					element.first_name = imageData.text;
 					element.sessionID = $localStorage.activeSessionId;
@@ -1398,21 +1401,20 @@ app.controller('appCtrl', function ($window, $state, $filter, $scope, $ionicPopu
 						$localStorage.SessionSubitems = $scope.SessionSubitems;
 					} else {
 						var currentObject = $scope.SessionSubitems.slice(-1)[0];
-						console.log(currentObject);
 						var previousObject = $localStorage.SessionSubitems;
-						console.log(previousObject);
 
 						var merged = previousObject.concat(currentObject);
 						$localStorage.SessionSubitems = merged;
 					}
-					//Recurive call, to stay on scanner page. DIRTY use
+					//Recurive call, to stay on scanner page. DIRTY use.............But works.....Right?
 					qrscanfunc();
 				}
-			}, function (error) {
+			}, function (error) { //Couldn't find anything......
 				$state.go("home1");
 				$scope.showAlert("error:" + error);
 			});
 		} else {
+			//Should be called if a session is not selected - right?
 			$scope.showAlert("Please Select Session First");
 		}
 	}

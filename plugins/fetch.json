@@ -15,14 +15,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-media-capture": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-media-capture@~1.2.0"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-file": {
         "source": {
             "type": "registry",
@@ -175,6 +167,16 @@
         "is_top_level": true,
         "variables": {
             "CAMERA_USAGE_DESCRIPTION": "To scan barcodes"
+        }
+    },
+    "cordova-plugin-media-capture": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-media-capture@~1.2.0"
+        },
+        "is_top_level": true,
+        "variables": {
+            "CAMERA_USAGE_DESCRIPTION": "your usage message"
         }
     }
 }
